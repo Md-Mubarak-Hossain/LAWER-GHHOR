@@ -2,10 +2,12 @@ import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Login from '../pages/Account/Login/Login';
 import SignUp from '../pages/Account/SignUp/SignUp';
-import Blog from '../pages/Blog/Blog';
+import Blog from '../pages/publicPages/Blog/Blog';
+import Faq from '../pages/publicPages/Faq/Faq';
 import Home from '../pages/Home/Home/Home';
 import Main from '../pages/Layout/Main';
 import FourOfFour from './FourOfFour';
+import About from '../pages/publicPages/About/About';
 
 const Routes = () => {
     const router = createBrowserRouter([{
@@ -27,6 +29,14 @@ const Routes = () => {
             {
                 path: '/blog',
                 element: <Blog></Blog>
+            },
+            {
+                path: '/faq',
+                element: <Faq></Faq>
+            },
+            {
+                path: '/about',
+                element: <About></About>
             },
         ]
     },

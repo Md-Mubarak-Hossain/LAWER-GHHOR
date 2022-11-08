@@ -9,6 +9,7 @@ const Context = ({ children }) => {
     const googleProvider = new GoogleAuthProvider();
     const gitProvider = new GithubAuthProvider();
 
+
     const signUp = (email, password) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)

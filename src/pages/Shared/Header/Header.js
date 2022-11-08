@@ -7,6 +7,7 @@ import { darkTheme, lightTheme } from '../Theme/theme';
 import logo from '../../../assets/logo/logo.svg';
 
 const Header = () => {
+
     const { user, logOut } = useContext(AuthContext);
     const [theme, setTheme] = useState('dark');
 
@@ -24,6 +25,25 @@ const Header = () => {
             .catch(error => console.error(error))
 
     }
+    const menuBar = <>
+        < li tabIndex={0} >
+            <Link to='/' className="btn btn-ghost normal-case text-xl hover:text-warning">Home</Link>
+            <Link to='/' className="btn btn-ghost normal-case text-xl hover:text-warning">Courses</Link>
+            <Link to='/faq' className="btn btn-ghost normal-case text-xl hover:text-warning">FAQ</Link>
+            <Link to='/blog' className="btn btn-ghost normal-case text-xl hover:text-warning">Blog</Link>
+            <Link to='/about' className="btn btn-ghost normal-case text-xl hover:text-warning">About</Link>
+            {
+                user?.email ?
+                    <Link to='/' className="btn btn-ghost normal-case text-xl hover:text-warning"><button onClick={handleLogOut}>Log out</button></Link>
+
+                    :
+                    <>
+                        <Link to='/login' className="btn btn-ghost normal-case text-xl hover:text-warning">Log in</Link>
+                        <Link to='/signup' className="btn btn-ghost normal-case text-xl hover:text-warning">Sign Up</Link>
+                    </>
+            }
+        </ li >
+    </>
     return (
         <div className="navbar bg-primary">
             <div className="navbar-start">
@@ -32,37 +52,13 @@ const Header = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        {/* item-1 */}
-                        <li><Link to='/' className="btn btn-ghost normal-case text-xl hover:text-warning">Home</Link>
-                            <Link to='/' className="btn btn-ghost normal-case text-xl hover:text-warning">Courses</Link> </li>
-                        {/* item-1 end */}
-                        <li tabIndex={0}>
-                            {/* parent  */}
-                            <span className="justify-between flex-col">
-                                <Link to='/faq' className="btn btn-ghost normal-case text-xl hover:text-warning">FAQ</Link>
-                                <Link to='/blog' className="btn btn-ghost normal-case text-xl hover:text-warning">Blog</Link>
-                                <Link to='/about' className="btn btn-ghost normal-case text-xl hover:text-warning">About</Link>
-                            </span>
-                            {/* parent end */}
-                        </li>
-                        {/* item-3 */}
-                        <li> {
-                            user?.email ?
-                                <Link to='/' className="btn btn-ghost normal-case text-xl hover:text-warning"><button onClick={handleLogOut}>Log out</button></Link>
-
-                                :
-                                <Link to='/login' className="btn btn-ghost normal-case text-xl hover:text-warning">Log in</Link>
-                        }
-
-                            <Link to='/signup' className="btn btn-ghost normal-case text-xl hover:text-warning">Sign Up</Link></li>
-                        {/* item-3 end */}
+                        {menuBar}
                     </ul>
                 </div>
                 <div className='flex'>
                     <div className='rounded-full'>
-                        <Link>
+                        <Link to='/'>
                             <img src={logo} alt='logo' />
-
                         </Link>
                     </div>
                     <div>
@@ -72,28 +68,7 @@ const Header = () => {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
-                    {/* item-1 */}
-                    <li><Link to='/' className="btn btn-ghost normal-case text-xl hover:text-warning">Home</Link>
-                        <Link to='/' className="btn btn-ghost normal-case text-xl hover:text-warning">Courses</Link></li>
-                    {/* item-1 end */}
-                    <li tabIndex={0}>
-                        {/* parent */}
-                        <Link to='/faq' className="btn btn-ghost normal-case text-xl hover:text-warning">FAQ</Link>
-                        <Link to='/blog' className="btn btn-ghost normal-case text-xl hover:text-warning">Blog</Link>
-                        <Link to='/about' className="btn btn-ghost normal-case text-xl hover:text-warning">About</Link>
-                    </li>
-                    {/* parent end */}
-                    {/* item-3 */}
-                    <li> {
-                        user?.email ?
-                            <Link to='/' className="btn btn-ghost normal-case text-xl hover:text-warning"><button onClick={handleLogOut}>Log out</button></Link>
-
-                            :
-                            <Link to='/login' className="btn btn-ghost normal-case text-xl hover:text-warning">Log in</Link>
-                    }
-
-                        <Link to='/signup' className="btn btn-ghost normal-case text-xl hover:text-warning">Sign Up</Link></li>
-                    {/* item-3 end */}
+                    {menuBar}
                 </ul>
             </div>
             <div className="navbar-end">
