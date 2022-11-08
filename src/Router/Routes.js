@@ -8,6 +8,9 @@ import Home from '../pages/Home/Home/Home';
 import Main from '../pages/Layout/Main';
 import FourOfFour from './FourOfFour';
 import About from '../pages/publicPages/About/About';
+import LegalServices from '../pages/Services/LegalServices/LegalServices';
+import LegalNotices from '../pages/Services/LegalNotice/LegalNotices';
+import CivilLaws from '../pages/Services/CivilLaw/CivilLaws';
 
 const Routes = () => {
     const router = createBrowserRouter([{
@@ -16,7 +19,21 @@ const Routes = () => {
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader: () => fetch('http://localhost:5000/service')
+            },
+            {
+                path: '/services',
+                element: <LegalServices></LegalServices>,
+                loader: () => fetch('http://localhost:5000/services')
+            },
+            {
+                path: '/notice',
+                element: <LegalNotices></LegalNotices>
+            },
+            {
+                path: '/civil',
+                element: <CivilLaws></CivilLaws>
             },
             {
                 path: '/login',
