@@ -28,11 +28,13 @@ const Routes = () => {
             },
             {
                 path: '/blog',
-                element: <Blog></Blog>
+                element: <Blog></Blog>,
+                loader: () => fetch("http://localhost:5000/blog")
             },
             {
                 path: '/faq',
-                element: <Faq></Faq>
+                element: <Faq></Faq>,
+                loader: () => fetch('http://localhost:5000/faq')
             },
             {
                 path: '/about',

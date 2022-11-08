@@ -2,7 +2,7 @@ import React from 'react';
 
 const Slider = () => {
     return (
-        <div className="carousel w-full">
+        <div className="carousel w-11/12 m-5 mx-auto h-56 rounded ">
             <div id="slide1" className="carousel-item relative w-full">
                 <img alt='slider' src="https://placeimg.com/800/200/arch" className="w-full" />
                 <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
