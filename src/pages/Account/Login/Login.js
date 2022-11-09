@@ -3,7 +3,9 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/Context';
 import { FcGoogle } from 'react-icons/fc';
 import { SiGithub } from 'react-icons/si';
+import useTitle from '../../../hooks/useTitle';
 const Login = () => {
+    useTitle('Login');
     const { user, logIn, googleSignIn, gitHubSignIn } = useContext(AuthContext);
     const [error, setError] = useState('');
     const navigate = useNavigate();

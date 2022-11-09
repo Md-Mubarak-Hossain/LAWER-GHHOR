@@ -1,6 +1,6 @@
 import React from 'react';
-
 const Slider = () => {
+
     return (
         <div className="carousel w-11/12 m-5 mx-auto h-56 rounded ">
             <div id="slide1" className="carousel-item relative w-full">

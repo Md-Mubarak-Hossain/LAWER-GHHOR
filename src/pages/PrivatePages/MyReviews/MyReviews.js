@@ -1,8 +1,10 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../../../hooks/useTitle';
 import ReviewUpdate from './ReviewUpdate';
 
 const MyReviews = () => {
+    useTitle('My Reviews');
     const myreviews = useLoaderData();
     return (
         <div className="overflow-x-auto w-11/12 mx-auto">

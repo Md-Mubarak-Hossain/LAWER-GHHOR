@@ -3,15 +3,16 @@ import { FcGoogle } from 'react-icons/fc';
 import { SiGithub } from 'react-icons/si';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/Context';
+import useTitle from '../../../hooks/useTitle';
 
 const SignUp = () => {
+    useTitle('Sign Up');
+
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.from?.state?.pathname || '/';
     const { createUser, googleSignIn, gitHubSignIn } = useContext(AuthContext);
 
-
-    // console.log(createUser);
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;

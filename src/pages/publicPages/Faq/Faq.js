@@ -3,9 +3,11 @@ import { AuthContext } from '../../../Contexts/Context';
 import Load from '../../Shared/Load/Load';
 import { useLoaderData } from 'react-router-dom';
 import FaqDetail from './FaqDetail';
+import useTitle from '../../../hooks/useTitle';
 
 
 const Faq = () => {
+    useTitle('FAQ');
     const faq = useLoaderData();
     const { loading } = useContext(AuthContext);
     if (loading) {
