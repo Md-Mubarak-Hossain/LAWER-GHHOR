@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../../Contexts/Context';
+import Load from '../../Shared/Load/Load';
 import LegalService from './LegalService';
 import SideNav from './SideNav';
 
 const LegalServices = () => {
     const services = useLoaderData();
+    const { loading } = useContext(AuthContext);
+    if (loading) {
+        return <Load></Load>
+    };
     return (
         <div>
             <div className="flex flex-col w-full lg:flex-row">

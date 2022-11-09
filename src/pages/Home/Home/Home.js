@@ -3,7 +3,6 @@ import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/Context';
 import useTitle from '../../../hooks/useTitle';
 import LegalService from '../../Services/LegalServices/LegalService';
-import LegalServices from '../../Services/LegalServices/LegalServices';
 import Load from '../../Shared/Load/Load';
 
 const Home = () => {

@@ -11,6 +11,9 @@ import About from '../pages/publicPages/About/About';
 import LegalServices from '../pages/Services/LegalServices/LegalServices';
 import LegalNotices from '../pages/Services/LegalNotice/LegalNotices';
 import CivilLaws from '../pages/Services/CivilLaw/CivilLaws';
+import MyReviews from '../pages/PrivatePages/MyReviews/MyReviews';
+import ReviewUpdate from '../pages/PrivatePages/MyReviews/ReviewUpdate';
+import AddService from '../pages/Services/LegalServices/AddService';
 
 const Routes = () => {
     const router = createBrowserRouter([{
@@ -28,6 +31,11 @@ const Routes = () => {
                 loader: () => fetch('http://localhost:5000/services')
             },
             {
+                path: '/addservice/:id',
+                element: <AddService></AddService>,
+                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+            },
+            {
                 path: '/notice',
                 element: <LegalNotices></LegalNotices>
             },
@@ -38,6 +46,16 @@ const Routes = () => {
             {
                 path: '/login',
                 element: <Login></Login>
+            },
+            {
+                path: '/myreviews',
+                element: <MyReviews></MyReviews>,
+                loader: () => fetch('http://localhost:5000/myreviews')
+            },
+            {
+                path: '/reviewupdate',
+                element: <ReviewUpdate></ReviewUpdate>,
+                loader: () => fetch('http://localhost:5000/services')
             },
             {
                 path: '/signup',
