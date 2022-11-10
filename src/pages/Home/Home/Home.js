@@ -2,9 +2,12 @@ import React, { useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/Context';
 import useTitle from '../../../hooks/useTitle';
+import CivilLaws from '../../Services/CivilLaw/CivilLaws';
+import LegalNotices from '../../Services/LegalNotice/LegalNotices';
 import LegalService from '../../Services/LegalServices/LegalService';
 import Load from '../../Shared/Load/Load';
 import Slider from '../../Shared/Slider/Slider';
+
 
 const Home = () => {
     useTitle('Home');
@@ -30,6 +33,12 @@ const Home = () => {
                         <button className='btn btn-outline btn-warning lg:w-80 mx-auto'>See more services</button>
                     </Link >
                 </div>
+            </div>
+            <div className='my-6 py-4'>
+                <LegalNotices></LegalNotices>
+            </div>
+            <div className='my-5 py-3'>
+                <CivilLaws></CivilLaws>
             </div>
         </>
     );

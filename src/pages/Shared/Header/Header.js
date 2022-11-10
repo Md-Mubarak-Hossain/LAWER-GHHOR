@@ -5,7 +5,7 @@ import { AuthContext } from '../../../Contexts/Context';
 import { GlobalStyles } from '../Theme/Global';
 import { darkTheme, lightTheme } from '../Theme/theme';
 import logo from '../../../assets/logo/logo.svg';
-import { setAuthToken } from '../../../Api/auth';
+
 
 const Header = () => {
 
@@ -46,7 +46,7 @@ const Header = () => {
             }
             <Link to='/faq' className="btn btn-ghost normal-case hover:text-warning">FAQ</Link>
             <Link to='/blog' className="btn btn-ghost normal-case hover:text-warning">Blog</Link>
-            <Link to='/about' className="btn btn-ghost normal-case hover:text-warning">About</Link>
+            <Link to='/notice' className="btn btn-ghost normal-case hover:text-warning">Legal Notice</Link>
         </ li >
     </>
     return (

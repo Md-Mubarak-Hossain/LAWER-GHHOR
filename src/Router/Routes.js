@@ -16,6 +16,8 @@ import AddService from '../pages/Services/LegalServices/AddService';
 import PrivateRouter from './PrivateRouter';
 import LegalServiceAdd from '../pages/Services/LegalServices/LegalServiceAdd';
 import ReviewUpdate from '../pages/PrivatePages/MyReviews/ReviewUpdate';
+import LegalNotice from '../pages/Services/LegalNotice/LegalNotice';
+
 
 const Routes = () => {
     const router = createBrowserRouter([{
@@ -43,9 +45,14 @@ const Routes = () => {
                 loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
 
             },
+
+            {
+                path: '/notices',
+                element: <LegalNotices></LegalNotices>
+            },
             {
                 path: '/notice',
-                element: <LegalNotices></LegalNotices>
+                element: <LegalNotice></LegalNotice>
             },
             {
                 path: '/civil',

@@ -1,0 +1,7 @@
+.containerImg::before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, black 0%, rgba(211, 211, 212, 0) 100%);
+    content: '';
+}
