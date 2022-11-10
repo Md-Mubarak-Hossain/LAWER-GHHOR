@@ -12,8 +12,11 @@ import LegalServices from '../pages/Services/LegalServices/LegalServices';
 import LegalNotices from '../pages/Services/LegalNotice/LegalNotices';
 import CivilLaws from '../pages/Services/CivilLaw/CivilLaws';
 import MyReviews from '../pages/PrivatePages/MyReviews/MyReviews';
-import ReviewUpdate from '../pages/PrivatePages/MyReviews/ReviewUpdate';
 import AddService from '../pages/Services/LegalServices/AddService';
+import PrivateRouter from './PrivateRouter';
+import ReviewRow from '../pages/PrivatePages/MyReviews/ReviewRow';
+import LegalServiceAdd from '../pages/Services/LegalServices/LegalServiceAdd';
+import Load from '../pages/Shared/Load/Load';
 
 const Routes = () => {
     const router = createBrowserRouter([{
@@ -31,9 +34,15 @@ const Routes = () => {
                 loader: () => fetch('http://localhost:5000/services')
             },
             {
-                path: '/addservice/:id',
-                element: <AddService></AddService>,
+                path: '/addservice',
+                element: <PrivateRouter><AddService></AddService></PrivateRouter>,
+                loader: () => fetch(`http://localhost:5000/services`)
+            },
+            {
+                path: '/LegalServiceAdd/:id',
+                element: <PrivateRouter><LegalServiceAdd></LegalServiceAdd></PrivateRouter>,
                 loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+
             },
             {
                 path: '/notice',
@@ -49,13 +58,13 @@ const Routes = () => {
             },
             {
                 path: '/myreviews',
-                element: <MyReviews></MyReviews>,
-                loader: () => fetch('http://localhost:5000/myreviews')
+                element: <PrivateRouter><MyReviews></MyReviews></PrivateRouter>
+
             },
             {
-                path: '/reviewupdate',
-                element: <ReviewUpdate></ReviewUpdate>,
-                loader: () => fetch('http://localhost:5000/services')
+                path: '/reviewrow',
+                element: <PrivateRouter><ReviewRow></ReviewRow></PrivateRouter>
+
             },
             {
                 path: '/signup',
@@ -74,7 +83,8 @@ const Routes = () => {
             {
                 path: '/about',
                 element: <About></About>
-            },
+            }
+
         ]
     },
     {

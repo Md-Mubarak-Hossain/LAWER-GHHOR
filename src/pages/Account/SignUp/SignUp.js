@@ -2,30 +2,31 @@ import React, { useContext } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { SiGithub } from 'react-icons/si';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { setAuthToken } from '../../../Api/auth';
 import { AuthContext } from '../../../Contexts/Context';
 import useTitle from '../../../hooks/useTitle';
 
 const SignUp = () => {
+    const { createUser, googleSignIn, gitHubSignIn } = useContext(AuthContext);
     useTitle('Sign Up');
-
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.from?.state?.pathname || '/';
-    const { createUser, googleSignIn, gitHubSignIn } = useContext(AuthContext);
 
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
-        // const photoURL = form.photoURL.value;
+        const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
-        createUser(email, password, name)
+        createUser(email, password, photoURL, name)
             .then(result => {
                 const user = result.user;
+                setAuthToken(user);
                 console.log(user, 'signup')
                 form.reset();
-                navigate('/login')
+                navigate(from, { replace: true })
             })
             .catch(error => console.error(error))
     }
@@ -33,6 +34,7 @@ const SignUp = () => {
         googleSignIn()
             .then(result => {
                 const user = result.user;
+                setAuthToken(user);
                 navigate(from, { replace: true });
                 console.log(user)
             })
@@ -42,6 +44,7 @@ const SignUp = () => {
         gitHubSignIn()
             .then(result => {
                 const user = result.user;
+                setAuthToken(user);
                 console.log(user)
                 navigate(from, { replace: true });
             })

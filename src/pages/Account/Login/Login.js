@@ -4,6 +4,7 @@ import { AuthContext } from '../../../Contexts/Context';
 import { FcGoogle } from 'react-icons/fc';
 import { SiGithub } from 'react-icons/si';
 import useTitle from '../../../hooks/useTitle';
+import { setAuthToken } from '../../../Api/auth';
 const Login = () => {
     useTitle('Login');
     const { user, logIn, googleSignIn, gitHubSignIn } = useContext(AuthContext);
@@ -22,6 +23,7 @@ const Login = () => {
                 setError('');
                 form.reset();
                 console.log(user)
+                setAuthToken(user);
                 navigate(from, { replace: true });
                 return alert('Successfully log in!!!');
             })
@@ -36,6 +38,7 @@ const Login = () => {
         googleSignIn()
             .then(result => {
                 const user = result.user;
+                setAuthToken(user)
                 navigate(from, { replace: true });
                 console.log(user)
             })
@@ -45,6 +48,7 @@ const Login = () => {
         gitHubSignIn()
             .then(result => {
                 const user = result.user;
+                setAuthToken(user);
                 console.log(user)
                 navigate(from, { replace: true });
             })

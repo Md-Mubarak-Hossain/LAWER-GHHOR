@@ -15,7 +15,7 @@ const LegalService = ({ ser }) => {
                     <p>ratings:{rating} stars</p>
                 </div>
                 <p>{description.slice(0, 100)}</p>
-                <Link to={`/addservice/${_id}`}><button className=' btn btn-outline btn-warning'>See Service</button></Link>
+                <Link to={`/LegalServiceAdd/${_id}`}><button className=' btn btn-outline btn-warning'>See Service</button></Link>
             </div >
         </div >
     );

@@ -5,10 +5,12 @@ import { AuthContext } from '../../../Contexts/Context';
 import { GlobalStyles } from '../Theme/Global';
 import { darkTheme, lightTheme } from '../Theme/theme';
 import logo from '../../../assets/logo/logo.svg';
+import { setAuthToken } from '../../../Api/auth';
 
 const Header = () => {
 
     const { user, logOut } = useContext(AuthContext);
+    console.log(user);
     const [theme, setTheme] = useState('dark');
 
     const toggleTheme = () => {
@@ -27,22 +29,24 @@ const Header = () => {
     }
     const menuBar = <>
         < li tabIndex={0} >
-            <Link to='/' className="btn btn-ghost normal-case text-xl hover:text-warning">Home</Link>
-            <Link to='/services' className="btn btn-ghost normal-case text-xl hover:text-warning">Legal Services</Link>
-            <Link to='/faq' className="btn btn-ghost normal-case text-xl hover:text-warning">FAQ</Link>
-            <Link to='/blog' className="btn btn-ghost normal-case text-xl hover:text-warning">Blog</Link>
-            <Link to='/myreviews' className="btn btn-ghost normal-case text-xl hover:text-warning">My Review</Link>
-            <Link to='/about' className="btn btn-ghost normal-case text-xl hover:text-warning">About</Link>
+            <Link to='/' className="btn btn-ghost normal-case hover:text-warning">Home</Link>
+            <Link to='/services' className="btn btn-ghost normal-case hover:text-warning">Legal Services</Link>
             {
-                user?.email ?
-                    <Link to='/' className="btn btn-ghost normal-case text-xl hover:text-warning"><button onClick={handleLogOut}>Log out</button></Link>
-
+                (user?.email) || (user?.uid) ?
+                    <>
+                        <Link to='/myreviews' className="btn btn-ghost normal-case hover:text-warning">My Review</Link>
+                        <Link to='/addservice' className="btn btn-ghost normal-case hover:text-warning">Add Service</Link>
+                        <Link to='/' className=" hover:text-warning"><button onClick={handleLogOut} className="btn btn-black btn-sm">Log out</button></Link>
+                    </>
                     :
                     <>
-                        <Link to='/login' className="btn btn-ghost normal-case text-xl hover:text-warning">Log in</Link>
-                        <Link to='/signup' className="btn btn-ghost normal-case text-xl hover:text-warning">Sign Up</Link>
+                        <Link to='/login' className="btn btn-ghost normal-case hover:text-warning">Log in</Link>
+                        <Link to='/signup' className="btn btn-ghost normal-case hover:text-warning">Sign Up</Link>
                     </>
             }
+            <Link to='/faq' className="btn btn-ghost normal-case hover:text-warning">FAQ</Link>
+            <Link to='/blog' className="btn btn-ghost normal-case hover:text-warning">Blog</Link>
+            <Link to='/about' className="btn btn-ghost normal-case hover:text-warning">About</Link>
         </ li >
     </>
     return (
@@ -67,15 +71,15 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            <div className="navbar-center hidden lg:flex">
+            <div className="navbar-end hidden  lg:flex">
                 <ul className="menu menu-horizontal p-0">
                     {menuBar}
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to='/profile' className="justify-between btn btn-ghost btn-circle avatar">
-                    <div className="w-10 rounded-full text-xl text-green-700 text-bold">
-                        <img src={user?.photoURL} alt='user' title={user?.displayName} />
+                <Link to='/profile' className=" btn btn-ghost btn-circle avatar">
+                    <div className="w-10 rounded-full text-xl">
+                        <img src={user?.photoURL} alt=' user' title={user?.displayName} />
                     </div>
                 </Link>
                 <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme} >

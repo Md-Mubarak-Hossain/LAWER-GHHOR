@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
-import { AuthContext } from '../Contexts/UserContext';
+import { AuthContext } from '../Contexts/Context';
 import Load from '../pages/Shared/Load/Load';
 
 const PrivateRouter = ({ children }) => {
@@ -17,9 +17,7 @@ const PrivateRouter = ({ children }) => {
         <Navigate
             to='/login'
             state={{ from: loacation }}
-            replace
-        >
-
+            replace>
         </Navigate >
     )
 };

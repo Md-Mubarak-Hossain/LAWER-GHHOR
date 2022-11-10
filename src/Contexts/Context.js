@@ -4,16 +4,20 @@ import { createUserWithEmailAndPassword, getAuth, GithubAuthProvider, GoogleAuth
 export const AuthContext = createContext();
 const auth = getAuth(app)
 const Context = ({ children }) => {
-    const [user, setUser] = useState('');
+    const [user, setUser] = useState({});
     const [loading, setLoading] = useState(false);
     const googleProvider = new GoogleAuthProvider();
     const gitProvider = new GithubAuthProvider();
 
-
-    const signUp = (email, password) => {
+    const createUser = (email, password, name, photoURL) => {
         setLoading(true)
-        return createUserWithEmailAndPassword(auth, email, password)
+        return createUserWithEmailAndPassword(auth, email, password, name, photoURL)
     }
+
+    // const signUp = (email, password) => {
+    //     setLoading(true)
+    //     return createUserWithEmailAndPassword(auth, email, password)
+    // }
     const logIn = (email, password) => {
         setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
@@ -44,7 +48,7 @@ const Context = ({ children }) => {
         return signInWithPopup(auth, gitProvider)
     }
 
-    const authInfo = { user, loading, signUp, logIn, logOut, googleSignIn, gitHubSignIn };
+    const authInfo = { user, loading, createUser, logIn, logOut, googleSignIn, gitHubSignIn };
 
     return (
         <AuthContext.Provider value={authInfo}>
