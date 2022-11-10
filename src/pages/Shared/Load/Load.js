@@ -2,8 +2,9 @@ import React from 'react';
 
 const Load = () => {
     return (
-        <div className='h-32'>
-            <span className="btn  loading w-screen h-screen border-0 text-black  bg-white rounded-none">loading...</span>
+        <div className=' w-screen  bg-white h-screen'>
+            <p className='text-primary px-5 mx-6'>wait for page ready!!!</p>
+            <h2 className="btn h-32 loading  border-0 rounded-none bg-white text-blue-700 w-full text-center">loading...</h2>
         </div>
     );
 };

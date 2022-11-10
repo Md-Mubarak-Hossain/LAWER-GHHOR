@@ -14,9 +14,8 @@ import CivilLaws from '../pages/Services/CivilLaw/CivilLaws';
 import MyReviews from '../pages/PrivatePages/MyReviews/MyReviews';
 import AddService from '../pages/Services/LegalServices/AddService';
 import PrivateRouter from './PrivateRouter';
-import ReviewRow from '../pages/PrivatePages/MyReviews/ReviewRow';
 import LegalServiceAdd from '../pages/Services/LegalServices/LegalServiceAdd';
-import Load from '../pages/Shared/Load/Load';
+import ReviewUpdate from '../pages/PrivatePages/MyReviews/ReviewUpdate';
 
 const Routes = () => {
     const router = createBrowserRouter([{
@@ -62,10 +61,15 @@ const Routes = () => {
 
             },
             {
-                path: '/reviewrow',
-                element: <PrivateRouter><ReviewRow></ReviewRow></PrivateRouter>
-
+                path: '/reviewUpdate/:id',
+                element: <PrivateRouter><ReviewUpdate></ReviewUpdate></PrivateRouter>,
+                loader: ({ params }) => fetch(`http://localhost:5000/myreviews/${params.id}`)
             },
+            // {
+            //     path: '/reviewrow/:id',
+            //     element: <PrivateRouter><ReviewRow></ReviewRow></PrivateRouter>,
+            //     loader: ({ params }) => fetch(`http://localhost:5000/myreviews/${params.id}`)
+            // },
             {
                 path: '/signup',
                 element: <SignUp></SignUp>
