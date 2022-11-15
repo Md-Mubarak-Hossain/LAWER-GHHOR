@@ -7,17 +7,16 @@ import Faq from '../pages/publicPages/Faq/Faq';
 import Home from '../pages/Home/Home/Home';
 import Main from '../pages/Layout/Main';
 import FourOfFour from './FourOfFour';
-import About from '../pages/publicPages/About/About';
 import LegalServices from '../pages/Services/LegalServices/LegalServices';
 import LegalNotices from '../pages/Services/LegalNotice/LegalNotices';
 import CivilLaws from '../pages/Services/CivilLaw/CivilLaws';
 import MyReviews from '../pages/PrivatePages/MyReviews/MyReviews';
-import AddService from '../pages/Services/LegalServices/AddService';
 import PrivateRouter from './PrivateRouter';
 import LegalServiceAdd from '../pages/Services/LegalServices/LegalServiceAdd';
 import ReviewUpdate from '../pages/PrivatePages/MyReviews/ReviewUpdate';
 import LegalNotice from '../pages/Services/LegalNotice/LegalNotice';
-
+import Chat from '../pages/Home/Chat/Chat';
+import File from '../pages/Home/File/File';
 
 const Routes = () => {
     const router = createBrowserRouter([{
@@ -27,22 +26,26 @@ const Routes = () => {
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/service')
+                loader: () => fetch(' https://lawyer-server-10.vercel.app/service')
+            },
+            {
+                path: '/login',
+                element: <Login></Login>
+            },
+            {
+                path: '/file',
+                element: <File></File>,
+                loader: () => fetch(' https://lawyer-server-10.vercel.app/files')
             },
             {
                 path: '/services',
                 element: <LegalServices></LegalServices>,
-                loader: () => fetch('http://localhost:5000/services')
-            },
-            {
-                path: '/addservice',
-                element: <PrivateRouter><AddService></AddService></PrivateRouter>,
-                loader: () => fetch(`http://localhost:5000/services`)
+                loader: () => fetch(' https://lawyer-server-10.vercel.app/services')
             },
             {
                 path: '/LegalServiceAdd/:id',
                 element: <PrivateRouter><LegalServiceAdd></LegalServiceAdd></PrivateRouter>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(` https://lawyer-server-10.vercel.app/services/${params.id}`)
 
             },
 
@@ -63,6 +66,11 @@ const Routes = () => {
                 element: <Login></Login>
             },
             {
+                path: '/chat',
+                element: <PrivateRouter><Chat></Chat></PrivateRouter>,
+                loader: () => fetch("https://lawyer-server-10.vercel.app/mchats")
+            },
+            {
                 path: '/myreviews',
                 element: <PrivateRouter><MyReviews></MyReviews></PrivateRouter>
 
@@ -70,12 +78,12 @@ const Routes = () => {
             {
                 path: '/reviewUpdate/:id',
                 element: <PrivateRouter><ReviewUpdate></ReviewUpdate></PrivateRouter>,
-                loader: ({ params }) => fetch(`http://localhost:5000/myreviews/${params.id}`)
+                loader: ({ params }) => fetch(` https://lawyer-server-10.vercel.app/myreviews/${params.id}`)
             },
             // {
             //     path: '/reviewrow/:id',
             //     element: <PrivateRouter><ReviewRow></ReviewRow></PrivateRouter>,
-            //     loader: ({ params }) => fetch(`http://localhost:5000/myreviews/${params.id}`)
+            //     loader: ({ params }) => fetch(` https://lawyer-server-10.vercel.app/myreviews/${params.id}`)
             // },
             {
                 path: '/signup',
@@ -84,17 +92,14 @@ const Routes = () => {
             {
                 path: '/blog',
                 element: <Blog></Blog>,
-                loader: () => fetch("http://localhost:5000/blog")
+                loader: () => fetch(" https://lawyer-server-10.vercel.app/blog")
             },
             {
                 path: '/faq',
                 element: <Faq></Faq>,
-                loader: () => fetch('http://localhost:5000/faq')
-            },
-            {
-                path: '/about',
-                element: <About></About>
+                loader: () => fetch(' https://lawyer-server-10.vercel.app/faq')
             }
+
 
         ]
     },

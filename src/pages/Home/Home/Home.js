@@ -7,6 +7,7 @@ import LegalNotices from '../../Services/LegalNotice/LegalNotices';
 import LegalService from '../../Services/LegalServices/LegalService';
 import Load from '../../Shared/Load/Load';
 import Slider from '../../Shared/Slider/Slider';
+import Footer from '../Chat/Footer';
 
 
 const Home = () => {
@@ -40,6 +41,7 @@ const Home = () => {
             <div className='my-5 py-3'>
                 <CivilLaws></CivilLaws>
             </div>
+            <div className="grid  card  rounded-box place-items-center"><Footer></Footer></div>
         </>
     );
 };

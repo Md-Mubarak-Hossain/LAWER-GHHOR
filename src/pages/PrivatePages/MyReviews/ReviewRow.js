@@ -1,8 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ReviewRow = ({ view, handleDelete }) => {
-    const { _id, serviceName, img, servicePrice, } = view;
+const ReviewRow = ({ reviews }) => {
+    const { _id, serviceName, img, servicePrice, } = reviews;
+    const [dataView, setDataView] = ([]);
+    const handleDelete = id => {
+        const agree = window.confirm(`Are you sure to delete?`)
+        if (agree) {
+            fetch(` https://lawyer-server-10.vercel.app/myreviews/${id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    if (data.deleteCount > 0) {
+                        const remainData = dataView.filter(v => v._id !== id)
+                        setDataView(remainData);
+                        alert('successfully deleted')
+                    }
+                })
+        }
+    }
     return (
         <tr className='border hover:text-primary' >
             <th></th>

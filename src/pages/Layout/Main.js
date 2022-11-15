@@ -1,8 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Footer from '../Shared/Footer/Footer';
 import Header from '../Shared/Header/Header';
-import Slider from '../Shared/Slider/Slider';
+
 
 
 const Main = () => {
@@ -13,7 +12,6 @@ const Main = () => {
                 <div className="divider"></div>
                 <div className="grid  card  rounded-box place-items-center"><Outlet></Outlet></div>
                 <div className="divider"></div>
-                <div className="grid  card  rounded-box place-items-center"><Footer></Footer></div>
             </div>
         </>
     );

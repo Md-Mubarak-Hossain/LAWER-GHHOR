@@ -13,7 +13,7 @@ const ReviewUpdate = () => {
 
     const handleSub = event => {
         event.preventDefault();
-        fetch(`http://localhost:5000/myreviews/${reviewer._id}`, {
+        fetch(` https://lawyer-server-10.vercel.app/myreviews/${reviewer._id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
@@ -23,15 +23,14 @@ const ReviewUpdate = () => {
 
             .then(res => res.json())
             .then(data => {
-                setReviewer(data)
+
                 if (data.modified > 0) {
                     alert('successfully updated!!!');
                     event.target.reset();
                 }
-                console.log(data)
+
 
             })
-            .catch(err => console.error(err))
     }
     const onChangeHandle = event => {
         const value = event.target.value;
@@ -62,11 +61,10 @@ const ReviewUpdate = () => {
                     <input onChange={onChangeHandle} type="text" name="firstName" placeholder=" first name" className="input input-bordered w-full max-w-xs" required />
                     <input onChange={onChangeHandle} type="text" name="lastName" placeholder="last name" className="input input-bordered w-full max-w-xs" required />
                     <input onChange={onChangeHandle} type="number" name="phone" placeholder="your phone" className="input input-bordered w-full max-w-xs" required />
-                    <input onChange={onChangeHandle} type="email" name="email" defaultValue={user?.email} className="input input-bordered w-full max-w-xs" readOnly />
+                    <input type="email" name="email" defaultValue={user?.email} className="input input-bordered w-full max-w-xs" readOnly />
                     <textarea onChange={onChangeHandle} name="message" className="textarea textarea-bordered w-full max-w-xs" placeholder="why you want to update?" required></textarea>
                     <button className="btn btn-outline btn-secondary 
                             hover:btn-warning w-full max-w-xs">Confirm Update</button>
-
                 </form>
             </div>
         </div>

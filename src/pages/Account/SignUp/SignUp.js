@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { setAuthToken } from '../../../Api/auth';
 import { AuthContext } from '../../../Contexts/Context';
 import useTitle from '../../../hooks/useTitle';
+import Footer from '../../Home/Chat/Footer';
 
 const SignUp = () => {
     const { createUser, googleSignIn, gitHubSignIn } = useContext(AuthContext);
@@ -51,51 +52,54 @@ const SignUp = () => {
             .catch(err => console.error(err))
     }
     return (
-        <div className="hero min-h-screen" >
-            <div className="hero-content flex-col">
-                <h1 className="text-4xl font-extrabold text-primary uppercase">Please Sign up now!</h1>
-                <form onSubmit={handleSubmit} className="card flex-shrink-0 w-full max-w-sm shadow-2xl">
-                    <div className="card-body">
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Name</span>
-                            </label>
-                            <input type="text" placeholder="name" name="name" className=" input input-bordered" />
+        <>
+            <div className="hero min-h-screen" >
+                <div className="hero-content flex-col">
+                    <h1 className="text-4xl font-extrabold text-primary uppercase">Please Sign up now!</h1>
+                    <form onSubmit={handleSubmit} className="card flex-shrink-0 w-full max-w-sm shadow-2xl">
+                        <div className="card-body">
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Name</span>
+                                </label>
+                                <input type="text" placeholder="name" name="name" className=" input input-bordered" />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">PhotoURL</span>
+                                </label>
+                                <input type="text" placeholder="PhotoURL" name="photoURL" className=" input input-bordered" />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Email</span>
+                                </label>
+                                <input type="email" placeholder="email" name="email" className=" input input-bordered" />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Password</span>
+                                </label>
+                                <input type="password" placeholder="password" name="password" className="input input-bordered" />
+                                <label className="label">
+                                    <Link href="#" className="label-text-alt link link-hover">Forgot password?</Link>
+                                </label>
+                            </div>
+                            <div className="form-control mt-3 ">
+                                <button className="btn btn-primary mb-2">Sign Up</button>
+                                <h1><small>Already have an account?</small><Link to='/login'><button className='btn btn-active btn-link'>Log In</button></Link></h1>
+                            </div>
+                            <div className='divider my-0'>OR</div>
+                            <div className="grid place-items-center mt-0">
+                                <button onClick={googleHandle} className="btn btn-outline w-full my-2 text-primary lowercase"><FcGoogle></FcGoogle><span className='pl-2'>Sign in with </span><span className='text-warning'>google</span></button>
+                                <button onClick={gitHandle} className="btn btn-outline w-full my-2 text-primary lowercase"><SiGithub></SiGithub><span className='pl-2'>Sign in with </span><span className='text-warning'>GitHub</span></button>
+                            </div>
                         </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">PhotoURL</span>
-                            </label>
-                            <input type="text" placeholder="PhotoURL" name="photoURL" className=" input input-bordered" />
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Email</span>
-                            </label>
-                            <input type="email" placeholder="email" name="email" className=" input input-bordered" />
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Password</span>
-                            </label>
-                            <input type="password" placeholder="password" name="password" className="input input-bordered" />
-                            <label className="label">
-                                <Link href="#" className="label-text-alt link link-hover">Forgot password?</Link>
-                            </label>
-                        </div>
-                        <div className="form-control mt-3 ">
-                            <button className="btn btn-primary mb-2">Sign Up</button>
-                            <h1><small>Already have an account?</small><Link to='/login'><button className='btn btn-active btn-link'>Log In</button></Link></h1>
-                        </div>
-                        <div className='divider my-0'>OR</div>
-                        <div className="grid place-items-center mt-0">
-                            <button onClick={googleHandle} className="btn btn-outline w-full my-2 text-primary lowercase"><FcGoogle></FcGoogle><span className='pl-2'>Sign in with </span><span className='text-warning'>google</span></button>
-                            <button onClick={gitHandle} className="btn btn-outline w-full my-2 text-primary lowercase"><SiGithub></SiGithub><span className='pl-2'>Sign in with </span><span className='text-warning'>GitHub</span></button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div >
+                    </form>
+                </div>
+            </div >
+            <div className="grid  card  rounded-box place-items-center"><Footer></Footer></div>
+        </>
     );
 };
 

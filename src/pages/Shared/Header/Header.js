@@ -35,7 +35,6 @@ const Header = () => {
                 (user?.email) || (user?.uid) ?
                     <>
                         <Link to='/myreviews' className="btn btn-ghost normal-case hover:text-warning">My Review</Link>
-                        <Link to='/addservice' className="btn btn-ghost normal-case hover:text-warning">Add Service</Link>
                         <Link to='/' className=" hover:text-warning"><button onClick={handleLogOut} className="btn btn-black btn-sm">Log out</button></Link>
                     </>
                     :
@@ -77,6 +76,15 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
+                {
+                    (user?.email) || (user?.uid) ?
+                        <Link to='/chat'>
+                            <button className="btn btn-sm btn-outline btn-warning">
+                                MeChat
+                            </button>
+                        </Link>
+                        : <></>
+                }
                 <Link to='/profile' className=" btn btn-ghost btn-circle avatar">
                     <div className="w-10 rounded-full text-xl">
                         <img src={user?.photoURL} alt=' user' title={user?.displayName} />

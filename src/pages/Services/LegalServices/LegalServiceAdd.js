@@ -28,7 +28,7 @@ const LegalServiceAdd = () => {
             message,
             img
         }
-        fetch('http://localhost:5000/myreviews', {
+        fetch(' https://lawyer-server-10.vercel.app/myreviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
