@@ -5,8 +5,6 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { setAuthToken } from '../../../Api/auth';
 import { AuthContext } from '../../../Contexts/Context';
 import useTitle from '../../../hooks/useTitle';
-import Footer from '../../Home/Chat/Footer';
-
 const SignUp = () => {
     const { createUser, googleSignIn, gitHubSignIn } = useContext(AuthContext);
     useTitle('Sign Up');
@@ -98,7 +96,6 @@ const SignUp = () => {
                     </form>
                 </div>
             </div >
-            <div className="grid  card  rounded-box place-items-center"><Footer></Footer></div>
         </>
     );
 };

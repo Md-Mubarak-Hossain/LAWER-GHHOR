@@ -1,6 +1,6 @@
 import React from 'react';
-import slide1 from '../../../assets/images/slide1.jpg';
-import slide2 from '../../../assets/images/slide2.jpg';
+import slide1 from '../../../assets/images/slide2.jpg';
+import slide2 from '../../../assets/images/slide1.jpg';
 import slide3 from '../../../assets/images/slide3.jpg';
 import './Slider.css'
 const Slider = () => {
@@ -16,7 +16,7 @@ const Slider = () => {
     return (
         <div className="carousel">
             <div id="slide1" className="carousel-item relative w-full containerImg ">
-                <img src={slide1} className="w-full h-72  " alt='' />
+                <img src={slide1} className="w-screen" alt='' />
                 {bannerText}
                 <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
                     <a href="#slide3" className="btn btn-circle mx-5">❮</a>
@@ -24,7 +24,7 @@ const Slider = () => {
                 </div>
             </div>
             <div id="slide2" className="carousel-item relative w-full containerImg">
-                <img src={slide2} className="w-full h-72 max-h-full" alt='' />
+                <img src={slide2} className="w-screen max-h-full" alt='' />
                 {bannerText}
                 <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
                     <a href="#slide1" className="btn btn-circle mx-5">❮</a>
@@ -32,7 +32,7 @@ const Slider = () => {
                 </div>
             </div>
             <div id="slide3" className="carousel-item relative w-full containerImg">
-                <img src={slide3} className="w-full h-72 max-h-full" alt='' />
+                <img src={slide3} className="w-screen max-h-full" alt='' />
                 {bannerText}
                 <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
                     <a href="#slide2" className="btn btn-circle mx-5">❮</a>
