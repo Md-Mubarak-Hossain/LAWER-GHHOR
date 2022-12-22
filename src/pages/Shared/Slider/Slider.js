@@ -14,27 +14,27 @@ const Slider = () => {
         </div>
     </>
     return (
-        <div className="carousel">
+        <div className="carousel h-96 lg:h-screen">
             <div id="slide1" className="carousel-item relative w-full containerImg ">
-                <img src={slide1} className="w-screen" alt='' />
+                <img src={slide1} className="lg:w-screen" alt='' />
                 {bannerText}
-                <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
+                <div className="absolute  flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
                     <a href="#slide3" className="btn btn-circle mx-5">❮</a>
                     <a href="#slide2" className="btn btn-circle">❯</a>
                 </div>
             </div>
             <div id="slide2" className="carousel-item relative w-full containerImg">
-                <img src={slide2} className="w-screen max-h-full" alt='' />
+                <img src={slide2} className="lg:w-screen max-h-full" alt='' />
                 {bannerText}
-                <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
+                <div className="absolute  flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
                     <a href="#slide1" className="btn btn-circle mx-5">❮</a>
                     <a href="#slide3" className="btn btn-circle">❯</a>
                 </div>
             </div>
             <div id="slide3" className="carousel-item relative w-full containerImg">
-                <img src={slide3} className="w-screen max-h-full" alt='' />
+                <img src={slide3} className="lg:w-screen max-h-full" alt='' />
                 {bannerText}
-                <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
+                <div className="absolute  flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
                     <a href="#slide2" className="btn btn-circle mx-5">❮</a>
                     <a href="#slide1" className="btn btn-circle">❯</a>
                 </div>
