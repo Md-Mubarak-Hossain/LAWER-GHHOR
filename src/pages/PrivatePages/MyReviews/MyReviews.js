@@ -1,8 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../Contexts/Context';
 import useTitle from '../../../hooks/useTitle';
-import Footer from '../../Home/Chat/Footer';
-import Load from '../../Shared/Load/Load';
 import NoData from './NoData/NoData';
 import ReviewRow from './ReviewRow';
 
@@ -27,19 +25,19 @@ const MyReviews = () => {
             .catch(err => console.error(err))
     }, [user?.email])
     if (loading) {
-        return <Load></Load>
+        return <p>loading...</p>
     }
 
 
     return (
         <>
-            <div className="overflow-x-auto w-11/12 mx-auto">
+            <div className="w-full my-5 py-5">
                 {
                     myreview.length > 0 ?
                         <table className="table w-full">
                             <p> TotalReview: {myreview.length}</p>
                             <thead>
-                                <tr className='bg-primary text-black'>
+                                <tr>
                                     <th></th>
                                     <th><label><button>DELETE</button></label></th>
                                     <th></th>
@@ -57,13 +55,11 @@ const MyReviews = () => {
                                         handleDel></ReviewRow>
 
                                     )}
-
                             </tbody>
                         </table >
                         : <NoData></NoData>
                 }
             </div >
-            <div className="grid  card  rounded-box place-items-center"><Footer></Footer></div>
         </>
     );
 };

@@ -1,11 +1,10 @@
 import React from 'react';
 import useTitle from '../../../hooks/useTitle';
-import Footer from '../../Home/Chat/Footer';
 
 const LegalNotice = () => {
     useTitle('Legal Notice');
     return (
-        <>
+        <div className='my-10'>
             <div className="card w-11/12  shadow-xl mx-auto grid grid-cols-1 lg:grid-cols-2">
                 <div className="card-body border p-2">
                     <h2 className="card-title">Why is it important to obtain a Succession Certificate?</h2>
@@ -16,8 +15,7 @@ const LegalNotice = () => {
                     <p>To obtain succession certificate, a petition has to be filed before the District Judge within whose jurisdiction the deceased person ordinarily resided at the time of his or her death or, if at that time he or she had no fixed place of residence, the District Judge within whose jurisdiction any part of the property of the deceased may be found.</p>
                 </div>
             </div>
-            <div className="grid  card  rounded-box place-items-center"><Footer></Footer></div>
-        </>
+        </div>
     );
 };
 

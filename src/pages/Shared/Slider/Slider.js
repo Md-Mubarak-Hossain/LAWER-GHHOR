@@ -14,7 +14,7 @@ const Slider = () => {
         </div>
     </>
     return (
-        <div className="carousel w-11/12  mx-auto rounded-xl ">
+        <div className="carousel">
             <div id="slide1" className="carousel-item relative w-full containerImg ">
                 <img src={slide1} className="w-full h-72  " alt='' />
                 {bannerText}

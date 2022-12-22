@@ -22,7 +22,7 @@ const ReviewRow = ({ reviews }) => {
         }
     }
     return (
-        <tr className='border hover:text-primary' >
+        <tr className='hover:text-primary'>
             <th></th>
             <th>
                 <button onClick={() => handleDelete(_id)} className="btn btn-circle btn-outline">
@@ -40,8 +40,12 @@ const ReviewRow = ({ reviews }) => {
             <td>{serviceName}</td>
             <td>{servicePrice}</td>
             <th><label><Link to={`/reviewUpdate/${_id}`} ><button className=' btn btn-sm btn-outline'>Update</button></Link></label></th>
-            <th><label><button className='btn btn-sm btn-outline'> Confirm</button></label></th>
-        </tr >
+            <th>
+                <label>
+                    <button className='btn btn-sm btn-outline'>Confirm</button>
+                </label>
+            </th>
+        </tr>
     );
 };
 

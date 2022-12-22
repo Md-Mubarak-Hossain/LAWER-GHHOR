@@ -2,7 +2,8 @@ import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../../Contexts/Context';
 import useTitle from '../../../hooks/useTitle';
 import ChatView from './ChatView';
-import Footer from './Footer';
+import Foot from './Foot';
+
 
 
 const Chat = () => {
@@ -62,7 +63,7 @@ const Chat = () => {
                 </button></p>
             </form>
             <div className="grid h-20 card place-items-center">
-                <Footer></Footer>
+                <Foot></Foot>
             </div>
         </div >
 

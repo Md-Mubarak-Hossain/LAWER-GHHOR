@@ -17,11 +17,11 @@ const Singl = ({ chat }) => {
                     <div className='flex justify-between'>
                         <div className='w-10/12 p-5'>
                             {
-                                chat.chats.includes('https://www.youtube.com/watch?v=') || chat.chats.includes('https://') ?
+                                chat.chats.includes('https://www.youtu') || chat.chats.includes('https://') ?
                                     <>
                                         {
-                                            chat.chats.includes('https://www.youtube.com/watch?v=') ?
-                                                <YouTube videoId="2g811Eo7K8U" opts={opts} playerVars={chat.chats} controls />
+                                            chat.chats.includes('https://www.youtu') || chat.chats.includes('youtu') ?
+                                                <YouTube opts={opts} playerVars={chat.chats} controls />
 
                                                 : <p className='bg-primary text-white rounded p-3'>
                                                     <ExternalLink href={chat.chats}>
@@ -39,11 +39,11 @@ const Singl = ({ chat }) => {
                     : <div className='flex flex-row-reverse justify-between'>
                         <div className='w-10/12 p-5'>
                             {
-                                chat.chats.includes('https://www.youtube.com/watch?v=') || chat.chats.includes('youtu') || chat.chats.includes('https://') ?
+                                chat.chats.includes('https://www.youtu') || chat.chats.includes('youtu') || chat.chats.includes('https://') ?
                                     <>
                                         {
-                                            chat.chats.includes('https://www.youtube.com/watch?v=') || chat.chats.includes('youtu') ?
-                                                <YouTube videoId="2g811Eo7K8U" opts={opts} playerVars={chat.chats} controls />
+                                            chat.chats.includes('https://www.youtu') || chat.chats.includes('youtu') ?
+                                                <YouTube opts={opts} playerVars={chat.chats} controls />
 
                                                 : <p className='text-black bg-gray-100 rounded p-3'>
                                                     <ExternalLink href={chat.chats}>

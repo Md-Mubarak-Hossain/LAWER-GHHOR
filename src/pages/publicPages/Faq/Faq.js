@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../../Contexts/Context';
-import Load from '../../Shared/Load/Load';
 import { useLoaderData } from 'react-router-dom';
 import FaqDetail from './FaqDetail';
 import useTitle from '../../../hooks/useTitle';
@@ -11,7 +10,7 @@ const Faq = () => {
     const faq = useLoaderData();
     const { loading } = useContext(AuthContext);
     if (loading) {
-        return <Load></Load>
+        return <p>loading...</p>
     }
     return (
         <div className='p-2 grid grid-cols-1 lg:grid-cols-3'>

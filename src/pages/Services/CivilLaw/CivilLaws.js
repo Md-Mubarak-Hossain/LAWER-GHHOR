@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useTitle from '../../../hooks/useTitle';
-import Footer from '../../Home/Chat/Footer';
 
 const CivilLaws = () => {
     useTitle('Civil law');
@@ -15,7 +14,6 @@ const CivilLaws = () => {
                     <Link to='/notice'><button className='btn btn-outline btn-warning'>See more</button></Link>
                 </div>
             </div >
-            <div className="grid  card  rounded-box place-items-center"><Footer></Footer></div>
         </>
     );
 };

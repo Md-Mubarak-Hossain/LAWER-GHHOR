@@ -1,21 +1,21 @@
-import React, { useContext } from 'react';
+import React from 'react';
+import { useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/Context';
 import useTitle from '../../../hooks/useTitle';
 import CivilLaws from '../../Services/CivilLaw/CivilLaws';
 import LegalNotices from '../../Services/LegalNotice/LegalNotices';
 import LegalService from '../../Services/LegalServices/LegalService';
-import Load from '../../Shared/Load/Load';
 import Slider from '../../Shared/Slider/Slider';
-import Footer from '../Chat/Footer';
+
 
 
 const Home = () => {
     useTitle('Home');
     const service = useLoaderData();
-    const { loading } = useContext(AuthContext);
+    const { loading } = useContext(AuthContext)
     if (loading) {
-        return <Load></Load>
+        return <p>loading...</p>
     }
     return (
         <>
@@ -41,7 +41,7 @@ const Home = () => {
             <div className='my-5 py-3'>
                 <CivilLaws></CivilLaws>
             </div>
-            <div className="grid  card  rounded-box place-items-center"><Footer></Footer></div>
+
         </>
     );
 };
