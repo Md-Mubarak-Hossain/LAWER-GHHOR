@@ -9,7 +9,7 @@ const Slider = () => {
             <h1 className='text-2xl lg:text-5xl text-white text-bold'>Helpfull</h1>
             <h1 className='text-2xl lg:text-5xl text-white text-bold'>Lawyer Ghhor</h1>
         </div>
-        <div className="absolute  justify-end transform -translate-y-1/2 left-2 lg:left-5  top-3/4 ml-3 lg:ml-6 pl-2 lg:pl-6 w-3/4 lg:w-1/2">
+        <div className="absolute  justify-end transform -translate-y-1/2 left-2 lg:left-5  top-3/4 ml-3 lg:ml-6 pl-2 lg:pl-6 w-2/3 lg:w-1/2">
             <p className='lg:text-xl text-bold text-white'>There are many services of Legal services of  available in our Lawyer ghhor, Your quary,you can check the web</p>
         </div>
     </>
