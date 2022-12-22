@@ -30,11 +30,10 @@ const Home = () => {
                     }
                 </div >
                 <div className='my-6 py-5 w-full flex flex-col justify-center items-center '>
-                    <Link to='/services'>
-                        <button className='btn btn-outline btn-warning lg:w-80 mx-auto'>See more services</button>
+                    <Link to={`/services`} className='text-primary link link-active active'>See more services
                     </Link >
                 </div>
-            </div>
+            </div >
             <div className='my-6 py-4'>
                 <LegalNotices></LegalNotices>
             </div>

@@ -8,11 +8,11 @@ const LegalService = ({ ser }) => {
     useTitle('Legal Service');
     const { serviceName, servicePrice, rating, img, description, _id } = ser;
     return (
-        <div className='card shadow-lg border p-2 flex flex-col justify-center items-center m-2'>
-            <div className='w-full p-4 rounded '>
+        <div className='shadow-lg p-2 flex flex-col justify-center items-center m-2'>
+            <div className='w-full p-4 rounded'>
                 <PhotoProvider className="foo">
                     <PhotoView src={img}>
-                        <img src={img} alt="" />
+                        <img src={img} alt="" className='w-full lg:h-72' />
                     </PhotoView>
                 </PhotoProvider>
             </div>
@@ -23,8 +23,8 @@ const LegalService = ({ ser }) => {
                     <p>ratings:{rating} stars</p>
                 </div>
                 <p>{description.slice(0, 100)}</p>
-                <Link to={`/LegalServiceAdd/${_id}`}><button className=' btn btn-outline btn-warning'>See Service</button></Link>
-            </div >
+                <Link to={`/LegalServiceAdd/${_id}`} className='text-primary link link-active active'>Add Service</Link>
+            </div>
         </div >
     );
 };

@@ -48,9 +48,9 @@ const LegalServiceAdd = () => {
     }
 
     return (
-        <div className='w-11/12 mx-auto'>
+        <div>
             <h2 className='text-xl lg:text-4xl font-extrabold text-warning text-center'>The Details Of this service : <span className='text-primary'> {serviceName}</span> </h2>
-            <form onSubmit={handleSub} className="card lg:card-side  shadow-xl">
+            <form onSubmit={handleSub} className="lg:flex  shadow-xl">
                 <div className="card-body lg:w-1/2 "> <figure><img className='w-full rounded' src={img} alt="..." /></figure>
                     <p>{description.slice(0, 100)} <span className='text-blue-700' title={description.slice(100,)}>...see more</span></p>
                     <div className='grid grid-cols-2'>
@@ -74,8 +74,8 @@ const LegalServiceAdd = () => {
                         </div>
                     </div>
                 </div>
-            </form >
-        </div >
+            </form>
+        </div>
     );
 };
 
