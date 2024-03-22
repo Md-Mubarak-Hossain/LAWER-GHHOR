@@ -3,6 +3,7 @@ import { AuthContext } from '../../../Contexts/Context';
 import useTitle from '../../../hooks/useTitle';
 import ChatView from './ChatView';
 import Foot from './Foot';
+import Load from '../../Shared/Load/Load';
 
 
 
@@ -39,33 +40,38 @@ const Chat = () => {
             })
     }
     if (loading) {
-        return <><p> page ready</p><p>loading...</p></>
+        return <><Load/></>
     }
     return (
-        <div className="flex flex-col w-full px-5">
+<>
+<div className="flex flex-col w-full px-5">
             <div className=" h-20  place-items-center shadow-xl">
                 <p className='flex  pt-3'>
                     {
                         <div className='grid grid-cols-1'>
-                            <img className='w-10 h-10 text-sm' src={`${user.photoURL}`} alt='img' />
+                            <img className='w-10 h-10 text-sm rounded-full' src={`${user.photoURL}`} alt='img' />
                             <p className='text-xs'>{user.displayName?.slice(0, 10)}</p>
                         </div>
                     }
                 </p>
             </div>
-            <div className="grid h-80  bg-white place-items-center border  overflow-y-scroll" enabled={true} top={500} bottom={0}>
+            <div className="w-full mx-auto lg:w-4/5 grid h-96  bg-base-300 place-items-center   overflow-y-scroll" enabled={true} top={500} bottom={0}>
                 <ChatView></ChatView>
             </div>
-            <form onSubmit={handleSub} className="flex h-20  place-items-center justify-end">
+        </div>
+            <div className="inline-flex lg:flex-row-reverse justify-between mx-auto bg-base-200 text-blue-700 w-full">
+                <form onSubmit={handleSub} className="flex h-20  place-items-center justify-end">
 
-                <p className='pl-2 '><textarea onBlur={onBlurHandle} name="chats" type="text" placeholder="Type here" className="textarea input-bordered rounded-xl h-1 w-56 lg:w-96" /></p>
-                <p className='pr-2'><button className="btn btn-outline btn-slate-50 border-slate-50">send
-                </button></p>
-            </form>
-            <div className="grid h-20 card place-items-center">
-                <Foot></Foot>
+                    <p className='pl-2 '><textarea onBlur={onBlurHandle} name="chats" type="text" placeholder="Type here" className="textarea input-bordered rounded-xl h-1 w-56 lg:w-96" >
+                    </textarea></p> 
+                    <p className='pr-2'><button className="btn btn-outline btn-slate-50 border-slate-50 border-0 hover:border">send
+                    </button></p>
+                </form>
+                <div className="h-20 flex justify-start">
+                    <Foot></Foot>
+                </div>
             </div>
-        </div >
+</>
 
     );
 };

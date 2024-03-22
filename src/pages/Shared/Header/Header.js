@@ -1,9 +1,9 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { ThemeProvider } from 'styled-components';
+// import { ThemeProvider } from 'styled-components';
 import { AuthContext } from '../../../Contexts/Context';
-import { GlobalStyles } from '../Theme/Global';
-import { darkTheme, lightTheme } from '../Theme/theme';
+// import { GlobalStyles } from '../Theme/Global';
+// import { darkTheme, lightTheme } from '../Theme/theme';
 import logo from '../../../assets/logo/logo.svg';
 
 
@@ -11,16 +11,16 @@ const Header = () => {
 
     const { user, logOut } = useContext(AuthContext);
     console.log(user);
-    const [theme, setTheme] = useState('dark');
+    // const [theme, setTheme] = useState('dark');
 
-    const toggleTheme = () => {
+    // const toggleTheme = () => {
 
-        if (theme === 'dark') {
-            setTheme('light');
-        } else {
-            setTheme('dark');
-        }
-    }
+    //     if (theme === 'dark') {
+    //         setTheme('light');
+    //     } else {
+    //         setTheme('dark');
+    //     }
+    // }
     const handleLogOut = () => {
         logOut()
             .then(() => { })
@@ -30,10 +30,10 @@ const Header = () => {
     const menuBar = <>
         <li tabIndex={0} className='inline-flex place-items-center justify-end right-0'>
             <Link>
-                <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme} >
+                {/* <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme} >
                     <input onClick={toggleTheme} type="checkbox" className="toggle toggle-sm " />
                     <GlobalStyles />
-                </ThemeProvider >
+                </ThemeProvider > */}
             </Link>
             <Link to='/' className=" hover:border-b-2 border-gray-300 hover:text-warning">Home</Link>
             <Link to='/services' className=" hover:border-b-2 border-gray-300 hover:text-warning">Services</Link>
@@ -65,7 +65,7 @@ const Header = () => {
         </ li >
     </>
     return (
-        <div className="navbar w-full bg-base-300 fixed top-0 h-20">
+        <div className="z-10 navbar w-full bg-base-300 fixed top-0 h-20">
             <div>
                 <div className="dropdown lg:hidden">
                     <label tabIndex={0} className=" hover:border-b-2 border-gray-300">
@@ -82,9 +82,9 @@ const Header = () => {
                                 <img src={logo} alt='logo' />
                             </Link>
                         </div>
-                        <div>
+                        <div className="z-10">
                             <Link to='/' className="hover:border-b-2 border-gray-300">
-                                <span className='lg:text-2xl uppercase text-warning lg:font-extrabold'>Lawyer Service</span>
+                                <span className='lg:text-2xl text-warning lg:font-extrabold'>Lawyer Service</span>
                             </Link>
                         </div>
                     </div>

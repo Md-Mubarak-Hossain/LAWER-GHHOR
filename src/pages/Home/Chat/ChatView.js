@@ -15,7 +15,7 @@ const ChatView = () => {
         })
 
     return (
-        <div className='lg:w-full p-2'>
+        <div className='w-full lg:w-1/2 p-2'>
             {
                 mchats.map(chat => <Singl key={chat._id}
                     chat={chat}></Singl>)

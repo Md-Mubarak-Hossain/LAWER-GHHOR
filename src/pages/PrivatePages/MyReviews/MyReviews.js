@@ -10,7 +10,7 @@ const MyReviews = () => {
     const { user, loading } = useContext(AuthContext)
     const [myreview, setReviews] = useState([])
     useEffect(() => {
-        fetch(` https://lawyer-server-10.vercel.app/myreviews?email=${user.email}`, {
+        fetch(`https://lawyer-server-10.vercel.app/myreviews?email=${user.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('myreviews-service-token')}`
             }
@@ -31,13 +31,14 @@ const MyReviews = () => {
 
     return (
         <>
-            <div className="w-full my-5 py-5">
+            <div className="w-full mx-auto px-4 lg:w-4/5 py-5">
                 {
                     myreview.length > 0 ?
-                        <table className="table w-full">
-                            <p> TotalReview: {myreview.length}</p>
+                        <span>
+                            <p className="text-center border-2 border-gray-200 mb-4 p-2"> TotalReview: {myreview.length}</p>
+                            <table className="w-full">
                             <thead>
-                                <tr>
+                                <tr className="bg-base-300 h-10 mb-4">
                                     <th></th>
                                     <th><label><button>DELETE</button></label></th>
                                     <th></th>
@@ -48,7 +49,7 @@ const MyReviews = () => {
                                     <th><label><button>Confirmation</button></label></th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody className="py-5">
                                 {
                                     myreview.map(reviews => <ReviewRow key={reviews._id}
                                         reviews={reviews}
@@ -57,6 +58,7 @@ const MyReviews = () => {
                                     )}
                             </tbody>
                         </table >
+                        </span>
                         : <NoData></NoData>
                 }
             </div >

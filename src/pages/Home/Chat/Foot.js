@@ -9,7 +9,7 @@ const Foot = () => {
             .then(() => { })
     }
     return (
-        <div className='card w-full'>
+        <div className='w-full'>
             <div className='card-body'>
                 <Link> <button onClick={() => logout()}><BiLogOutCircle></BiLogOutCircle></button></Link>
             </div>

@@ -22,7 +22,7 @@ const ReviewRow = ({ reviews }) => {
         }
     }
     return (
-        <tr className='hover:text-primary'>
+        <tr className='hover:text-primary py-5 my-5 lg:h-20 bg-base-200 hover:bg-base-300'>
             <th></th>
             <th>
                 <button onClick={() => handleDelete(_id)} className="btn btn-circle btn-outline">
@@ -31,18 +31,18 @@ const ReviewRow = ({ reviews }) => {
             </th>
             <th></th>
             <td>
-                <div className="avatar">
-                    <div className="mask rounded w-24 h-16">
+                <div className="avatar pt-5">
+                    <div className="mask rounded-md w-20 h-10 mx-5 shadow-sm">
                         <img src={img} alt='/' />
                     </div>
                 </div>
             </td>
             <td>{serviceName}</td>
             <td>{servicePrice}</td>
-            <th><label><Link to={`/reviewUpdate/${_id}`} ><button className=' btn btn-sm btn-outline'>Update</button></Link></label></th>
+            <th><label><Link to={`/reviewUpdate/${_id}`} ><button className=' btn btn-sm btn-outline hover:btn-primary'>Update</button></Link></label></th>
             <th>
                 <label>
-                    <button className='btn btn-sm btn-outline'>Confirm</button>
+                    <button className='btn btn-sm btn-outline hover:btn-success'>Confirm</button>
                 </label>
             </th>
         </tr>
