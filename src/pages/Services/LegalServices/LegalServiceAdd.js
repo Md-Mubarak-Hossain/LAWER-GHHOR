@@ -60,7 +60,7 @@ const LegalServiceAdd = () => {
                     <Link to='/myreviews'><button className="btn btn-outline btn-ghost">go review  &gt;</button></Link>
                 </div>
                 <div className="card-body lg:w-1/2">
-                    <div className='card-body mb-0 pb-0  bg-red-300 rounded'>
+                    <div className='card-body mb-0 pb-0  bg-base-300 rounded'>
                         <div className='grid grid-cols-2'>
                             <input type="text" name="firstName" placeholder=" first name" className="input input-bordered w-full max-w-xs" required />
                             <input type="text" name="lastName" placeholder="last name" className="input input-bordered w-full max-w-xs" required />

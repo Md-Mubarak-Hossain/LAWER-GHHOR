@@ -65,7 +65,7 @@ const Header = () => {
         </ li >
     </>
     return (
-        <div className="navbar w-full bg-base-300">
+        <div className="navbar w-full bg-base-300 fixed top-0 h-20">
             <div>
                 <div className="dropdown lg:hidden">
                     <label tabIndex={0} className=" hover:border-b-2 border-gray-300">

@@ -3,15 +3,7 @@ import React from 'react';
 import './Slider.css'
 import  Typewriter  from 'typewriter-effect';
 const Slider = () => {
-    const bannerText = <>
-        <div className="text-center pt-20">
-            <h1 className='text-2xl lg:text-5xl text-bold'>Welcome</h1>
-            <h1 className='text-2xl lg:text-5xl text-bold'>To Lawyer Service</h1>
-        </div>
-        <div className="w-full mx-auto p-5 lg:w-1/2">
-            <p className='lg:text-xl text-bold'>There are many services of Legal services of  available in our Lawyer ghhor, Your quary,you can check the web</p>
-        </div>
-    </>
+    
     return (
         <div data-theme="night" className=" h-96 bg-base-100">
             <div id="slide1" className="w-full">

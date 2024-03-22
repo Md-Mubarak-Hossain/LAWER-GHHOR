@@ -6,7 +6,7 @@ const CivilLaws = () => {
     useTitle('Civil law');
     return (
         <>
-            <div className="card w-11/12 shadow-xl mx-auto bg-slate-500">
+            <div className="card w-11/12 shadow-xl mx-auto bg-base-200">
                 <div className="card-body  rounded text-center">
                     <h2 className="card-title text-center text-3xl lg:w-1/3">Notice Of Civil Lawyer</h2>
                     <h2 className="card-title text-center">Description</h2>

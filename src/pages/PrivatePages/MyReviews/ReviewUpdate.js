@@ -46,10 +46,10 @@ const ReviewUpdate = () => {
     }
     return (
         <div className='w-11/12 mx-auto'>
-            <h2 className='text-xl lg:text-2xl font-extrabold text-primary text-center'>Update Form</h2>
-            <h2 className='text-xl lg:text-3xl font-extrabold text-warning text-center'>The Details Of this service : <span className='text-primary'> {review.serviceName}</span> </h2>
+            <h2 className='text-xl lg:text-xl font-extrabold text-primary text-center'>Update Form</h2>
+            <h2 className='py-2 text-xl lg:text-2xl font-extrabold text-warning text-center'>The Details Of this service : <span className='text-primary'> {review.serviceName}</span> </h2>
             <div className="card lg:card-side  shadow-xl grid grid-cols-1 lg:grid-cols-2">
-                <div className="card-body w-11/12 mx-auto lg:w-full  bg-red-300 text-blue-900 rounded">
+                <div className="card-body w-11/12 mx-auto lg:w-full  bg-base-300 text-gray-200 rounded">
                     <h2>Your Previous  Information</h2>
                     <h2>Reviewer Name:{review.reviewer}</h2>
                     <h2>Email:{review.email}</h2>
