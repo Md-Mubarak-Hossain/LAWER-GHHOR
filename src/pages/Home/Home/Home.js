@@ -15,7 +15,7 @@ const Home = () => {
     const service = useLoaderData();
     const { loading } = useContext(AuthContext)
     if (loading) {
-        return <p>loading...</p>
+        return <div className=""><span className="loading loading-spinner loading-lg bg-white">loading...</span></div>
     }
     return (
         <>

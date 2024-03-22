@@ -10,11 +10,13 @@ const LegalService = ({ ser }) => {
     return (
         <div className='shadow-lg p-2 flex flex-col justify-center items-center m-2'>
             <div className='w-full p-4 rounded'>
+                <div className="bg-base-300 rounded-md">
                 <PhotoProvider className="foo">
                     <PhotoView src={img}>
-                        <img src={img} alt="" className='w-full lg:h-72' />
+                        <img src={img} alt="service" className='w-full lg:h-72 rounded-md' />
                     </PhotoView>
                 </PhotoProvider>
+                </div>
             </div>
             <div className='card-body lg:h-64'>
                 <p>{serviceName}</p>
