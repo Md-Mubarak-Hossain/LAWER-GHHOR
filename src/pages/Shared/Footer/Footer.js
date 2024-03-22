@@ -14,7 +14,7 @@ const Footer = () => {
                 <div>
                     <span className="footer-title">LAWER GHHOR</span>
                     <Link to='/' className="link link-hover">Home</Link>
-                    <a className="link link-hover">Contact</a>
+                    <a href="https://mubarak-world.web.app" className="link link-hover">Contact</a>
                 </div>
                 <div>
                     <span className="footer-title">Other</span>

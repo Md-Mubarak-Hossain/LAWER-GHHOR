@@ -8,7 +8,7 @@ import { setAuthToken } from '../../../Api/auth';
 import Footer from 'react-images-viewer/lib/components/Footer';
 const Login = () => {
     useTitle('Login');
-    const { user, logIn, googleSignIn, gitHubSignIn } = useContext(AuthContext);
+    const { logIn, googleSignIn, gitHubSignIn } = useContext(AuthContext);
     const [error, setError] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
