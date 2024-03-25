@@ -6,9 +6,9 @@ const ref = createRef();
 const FaqDetail = ({ f }) => {
     const { title, description } = f;
     return (
-        <div className='mx-auto w-11/12 m-5 p-4 rounded ' ref={ref}>
-            <h3 className='text-primary text-extrabold text-4xl p-2 m-2'>{title}</h3>
-            <p className="p-4 text-semibold   my-2 rounded text-xl text-justify">
+        <div className='mx-auto w-11/12  p-4  ' ref={ref}>
+            <h3 className='text-blue-400  text-2xl p-2 m-2'>{title}</h3>
+            <p className="p-4  my-2  text-lg text-justify">
                 {description}
             </p>
             <Pdf targetRef={ref} filename={`${title}`.pdf}>

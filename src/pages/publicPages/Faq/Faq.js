@@ -3,7 +3,8 @@ import { AuthContext } from '../../../Contexts/Context';
 import { useLoaderData } from 'react-router-dom';
 import FaqDetail from './FaqDetail';
 import useTitle from '../../../hooks/useTitle';
-
+import faqLawyer from "../../../images/lawyer1png.png"
+import faqQuestion from "../../../images/question.png"
 
 const Faq = () => {
     useTitle('FAQ');
@@ -13,13 +14,19 @@ const Faq = () => {
         return <p>loading...</p>
     }
     return (
-        <div className='p-2 grid grid-cols-1 lg:grid-cols-3'>
+        <div className='w-11/12 flex flex-col justify-center items-center mx-auto'>
+<div className='flex'>
+<img src={faqLawyer} alt="faqImg" />
+<img src={faqQuestion} alt="faqImg2" />
+</div>
+<div className='p-2 grid grid-cols-1 lg:grid-cols-2'>
             {
                 faq.map(f => <FaqDetail key={f.index}
                     f={f}>
                 </FaqDetail>)
             }
         </div >
+        </div>
     );
 };
 
