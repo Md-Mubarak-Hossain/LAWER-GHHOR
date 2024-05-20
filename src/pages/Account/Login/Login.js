@@ -59,10 +59,10 @@ const Login = () => {
         <>
             <div className="hero w-full">
                 <div className="hero-content w-full" >
-                    <div className="card flex-shrink-0 lg:w-1/2 shadow-2xl ">
-                        <div className="card-body lg:w-full">
-                            <h2 className='font-extrabold lg:text-5xl uppercase underline decoration-wavy decoration-pink-500'>Please Log in now.</h2>
-                            <form onSubmit={handleSubmit} className="flex flex-col lg:w-full border-opacity-50">
+                    <div className="card flex-shrink-0 md:w-1/2 shadow-2xl border-2 border-dotted">
+                        <div className="card-body md:w-full">
+                            <h2 className='font-bold md:text-2xl'>Login Here</h2>
+                            <form onSubmit={handleSubmit} className="flex flex-col md:w-full border-opacity-50">
                                 <div className="grid place-items-center w-full">
 
                                     <div className="form-control w-full">

@@ -17,11 +17,13 @@ import ReviewUpdate from '../pages/PrivatePages/MyReviews/ReviewUpdate';
 import LegalNotice from '../pages/Services/LegalNotice/LegalNotice';
 import Chat from '../pages/Home/Chat/Chat';
 import File from '../pages/Home/File/File';
+import ErrorBoundary from './ErrorBoundary';
 
 const Routes = () => {
     const router = createBrowserRouter([{
         path: '/',
         element: <Main></Main>,
+        errorElement: <ErrorBoundary />,
         children: [
             {
                 path: '/',
@@ -92,12 +94,12 @@ const Routes = () => {
             {
                 path: '/blog',
                 element: <Blog></Blog>,
-                loader: () => fetch(" https://lawyer-server-10.vercel.app/blog")
+                loader: () => fetch("https://lawyer-server-10.vercel.app/blog")
             },
             {
                 path: '/faq',
                 element: <Faq></Faq>,
-                loader: () => fetch(' https://lawyer-server-10.vercel.app/faq')
+                loader: () => fetch('https://lawyer-server-10.vercel.app/faq')
             }
 
 
@@ -108,9 +110,12 @@ const Routes = () => {
         element: <FourOfFour></FourOfFour>
     }
     ])
+
     return (
-        <RouterProvider router={router}>
-        </RouterProvider >
+        <>
+            <RouterProvider router={router}>
+            </RouterProvider >
+        </>
     );
 };
 

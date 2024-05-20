@@ -22,7 +22,7 @@ const ReviewRow = ({ reviews }) => {
         }
     }
     return (
-        <tr className='hover:text-primary py-5 my-5 lg:h-20 bg-base-200 hover:bg-base-300'>
+        <tr className='hover:text-primary py-5 my-5 mdh-20 bg-base-200 hover:bg-base-300'>
             <th></th>
             <th>
                 <button onClick={() => handleDelete(_id)} className="btn btn-circle btn-outline">

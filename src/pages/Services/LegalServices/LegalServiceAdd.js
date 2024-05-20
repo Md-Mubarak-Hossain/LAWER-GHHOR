@@ -8,7 +8,7 @@ const LegalServiceAdd = () => {
     const { _id, serviceName, servicePrice, img, description, rating } = service;
     const { loading, user } = useContext(AuthContext)
     if (loading) {
-        return <Load></Load>
+        return <Load/>
     }
     console.log(service);
     const handleSub = event => {
@@ -49,9 +49,9 @@ const LegalServiceAdd = () => {
 
     return (
         <div>
-            <h2 className='text-xl lg:text-4xl font-extrabold text-warning text-center'>The Details Of this service : <span className='text-primary'> {serviceName}</span> </h2>
-            <form onSubmit={handleSub} className="lg:flex  shadow-xl">
-                <div className="card-body lg:w-1/2 "> <figure><img className='w-full rounded' src={img} alt="..." /></figure>
+            <h2 className='text-xl mdtext-4xl font-extrabold text-warning text-center'>The Details Of this service : <span className='text-primary'> {serviceName}</span> </h2>
+            <form onSubmit={handleSub} className="mdflex  shadow-xl">
+                <div className="card-body mdw-1/2 "> <figure><img className='w-full rounded' src={img} alt="..." /></figure>
                     <p>{description.slice(0, 100)} <span className='text-blue-700' title={description.slice(100,)}>...see more</span></p>
                     <div className='grid grid-cols-2'>
                         <h2 className="card-title">Payment: {servicePrice}</h2>
@@ -59,7 +59,7 @@ const LegalServiceAdd = () => {
                     </div>
                     <Link to='/myreviews'><button className="btn btn-outline btn-ghost">go review  &gt;</button></Link>
                 </div>
-                <div className="card-body lg:w-1/2">
+                <div className="card-body mdw-1/2">
                     <div className='card-body mb-0 pb-0  bg-base-300 rounded'>
                         <div className='grid grid-cols-2'>
                             <input type="text" name="firstName" placeholder=" first name" className="input input-bordered w-full max-w-xs" required />

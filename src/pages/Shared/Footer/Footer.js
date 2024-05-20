@@ -16,7 +16,7 @@ const Footer = () => {
                         </div>
                         <div className="px-2 inline-flex justify-center items-center">
                             <Link to='/' className="hover:border-b-2 border-gray-300">
-                                <span className='lg:text-2xl text-warning lg:font-extrabold'>Lawyer Service</span>
+                                <span className='mdtext-2xl text-warning mdfont-extrabold'>Lawyer Service</span>
                             </Link>
                         </div>
                     </div>

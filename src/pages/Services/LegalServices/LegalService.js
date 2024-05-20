@@ -13,12 +13,12 @@ const LegalService = ({ ser }) => {
                 <div className="bg-base-300 rounded-md">
                 <PhotoProvider className="foo">
                     <PhotoView src={img}>
-                        <img src={img} alt="service" className='w-full lg:h-72 rounded-md' />
+                        <img src={img} alt="service" className='w-full md:h-72 rounded-md md:p-5' />
                     </PhotoView>
                 </PhotoProvider>
                 </div>
             </div>
-            <div className='card-body lg:h-64'>
+            <div className='card-body md:h-64'>
                 <p>{serviceName}</p>
                 <div className='flex justify-between'>
                     <p>Service price:{servicePrice}</p>

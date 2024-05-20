@@ -51,47 +51,23 @@ const SignUp = () => {
     }
     return (
         <>
-            <div className="hero min-h-screen" >
-                <div className="hero-content flex-col">
-                    <h1 className="text-4xl font-extrabold text-primary uppercase">Please Sign up now!</h1>
-                    <form onSubmit={handleSubmit} className="card flex-shrink-0 w-full max-w-sm shadow-2xl">
-                        <div className="card-body">
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Name</span>
-                                </label>
-                                <input type="text" placeholder="name" name="name" className=" input input-bordered" />
-                            </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">PhotoURL</span>
-                                </label>
-                                <input type="text" placeholder="PhotoURL" name="photoURL" className=" input input-bordered" />
-                            </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Email</span>
-                                </label>
-                                <input type="email" placeholder="email" name="email" className=" input input-bordered" />
-                            </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Password</span>
-                                </label>
-                                <input type="password" placeholder="password" name="password" className="input input-bordered" />
-                                <label className="label">
-                                    <Link href="#" className="label-text-alt link link-hover">Forgot password?</Link>
-                                </label>
-                            </div>
-                            <div className="form-control mt-3 ">
-                                <button className="btn btn-primary mb-2">Sign Up</button>
-                                <h1><small>Already have an account?</small><Link to='/login'><button className='btn btn-active btn-link'>Log In</button></Link></h1>
-                            </div>
-                            <div className='divider my-0'>OR</div>
-                            <div className="grid place-items-center mt-0">
-                                <button onClick={googleHandle} className="btn btn-outline w-full my-2 text-primary lowercase"><FcGoogle></FcGoogle><span className='pl-2'>Sign in with </span><span className='text-warning'>google</span></button>
-                                <button onClick={gitHandle} className="btn btn-outline w-full my-2 text-primary lowercase"><SiGithub></SiGithub><span className='pl-2'>Sign in with </span><span className='text-warning'>GitHub</span></button>
-                            </div>
+            <div className="hero min-h-screen w-screen" >
+                <div className="hero-content flex-col border-2 border-dotted p-5 md:w-5/12 mx-auto rounded">
+                    <h1 className="text-xl font-bold">Sign up here</h1>
+                    <form onSubmit={handleSubmit} className="flex flex-col gap-2 w-full md:px-10">
+                        <input type="text" placeholder="name" name="name" className="w-full mx-auto input input-bordered input-sm" />
+                        <input type="text" placeholder="PhotoURL" name="photoURL" className="w-full mx-auto input input-bordered input-sm" />
+                        <input type="email" placeholder="email" name="email" className="w-full mx-auto input input-bordered input-sm" />
+                        <input type="password" placeholder="password" name="password" className="w-full mx-auto input input-bordered input-sm" />
+                        <label className="label">
+                            <Link href="#" className="label-text-alt link link-hover">Forgot password?</Link>
+                        </label>
+                        <button className="btn btn-primary btn-outline btn-sm">Sign Up</button>
+                        <h1><small>already have an account?</small><Link to='/login'><span className='italic'>login</span></Link></h1>
+                        <div className='divider'>OR</div>
+                        <div className="grid place-items-center">
+                            <button onClick={googleHandle} className="btn btn-sm rounded-full btn-outline w-full my-2 text-primary lowercase"><FcGoogle></FcGoogle><span className='pl-2'>Sign in with </span><span className='text-warning'>google</span></button>
+                            <button onClick={gitHandle} className="btn btn-sm rounded-full btn-outline w-full my-2 text-primary lowercase"><SiGithub></SiGithub><span className='pl-2'>Sign in with </span><span className='text-warning'>GitHub</span></button>
                         </div>
                     </form>
                 </div>

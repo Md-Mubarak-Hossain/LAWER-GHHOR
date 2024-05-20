@@ -12,7 +12,7 @@ const BlogDetail = ({ b }) => {
                 {description}
             </p>
             <Pdf targetRef={ref} filename='cors.pdf'>
-                {({ toPdf }) => <button className='badge badge-outline  btn-outline btn-warning w-40 p-3' onClick={toPdf}><FcDownload></FcDownload>Download Pdf</button>}
+                {({ toPdf }) => <button className='badge badge-outline  btn-outline btn-warning w-40 p-3' onClick={toPdf}><FcDownload></FcDownload>Download</button>}
             </Pdf>
         </div>
     );

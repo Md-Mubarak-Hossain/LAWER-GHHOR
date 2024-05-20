@@ -31,7 +31,7 @@ const MyReviews = () => {
 
     return (
         <>
-            <div className="w-full mx-auto px-4 lg:w-4/5 py-5">
+            <div className="w-full mx-auto px-4 mdw-4/5 py-5">
                 {
                     myreview.length > 0 ?
                         <span>

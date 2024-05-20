@@ -19,7 +19,7 @@ const Faq = () => {
 <img src={faqLawyer} alt="faqImg" />
 <img src={faqQuestion} alt="faqImg2" />
 </div>
-<div className='p-2 grid grid-cols-1 lg:grid-cols-2 bg-base-200'>
+<div className='p-2 grid grid-cols-1 mdgrid-cols-2 bg-base-200'>
             {
                 faq.map(f => <FaqDetail key={f.index}
                     f={f}>

@@ -55,14 +55,14 @@ const Chat = () => {
                     }
                 </p>
             </div>
-            <div className="w-full mx-auto lg:w-4/5 grid h-96  bg-base-300 place-items-center   overflow-y-scroll" enabled={true} top={500} bottom={0}>
+            <div className="w-full mx-auto mdw-4/5 grid h-96  bg-base-300 place-items-center   overflow-y-scroll" enabled={true} top={500} bottom={0}>
                 <ChatView></ChatView>
             </div>
         </div>
-            <div className="inline-flex lg:flex-row-reverse justify-between mx-auto bg-base-200 text-blue-700 w-full">
+            <div className="inline-flex mdflex-row-reverse justify-between mx-auto bg-base-200 text-blue-700 w-full">
                 <form onSubmit={handleSub} className="flex h-20  place-items-center justify-end">
 
-                    <p className='pl-2 '><textarea onBlur={onBlurHandle} name="chats" type="text" placeholder="Type here" className="textarea input-bordered rounded-xl h-1 w-56 lg:w-96" >
+                    <p className='pl-2 '><textarea onBlur={onBlurHandle} name="chats" type="text" placeholder="Type here" className="textarea input-bordered rounded-xl h-1 w-56 mdw-96" >
                     </textarea></p> 
                     <p className='pr-2'><button className="btn btn-outline btn-slate-50 border-slate-50 border-0 hover:border">send
                     </button></p>
