@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/Context';
 import Load from '../../Shared/Load/Load';
-
+import star from '../../../assets/svg/star.svg';
 const LegalServiceAdd = () => {
     const service = useLoaderData();
     const { _id, serviceName, servicePrice, img, description, rating } = service;
@@ -49,22 +49,22 @@ const LegalServiceAdd = () => {
 
     return (
         <div>
-            <h2 className='text-xl mdtext-4xl font-extrabold text-warning text-center'>The Details Of this service : <span className='text-primary'> {serviceName}</span> </h2>
-            <form onSubmit={handleSub} className="mdflex  shadow-xl">
-                <div className="card-body mdw-1/2 "> <figure><img className='w-full rounded' src={img} alt="..." /></figure>
+            <h2 className='text-xl md:text-4xl font-extrabold text-warning text-center'>The Details Of this service : <span className='text-primary'> {serviceName}</span> </h2>
+            <form onSubmit={handleSub} className="md:flex  shadow-xl">
+                <div className="card-body md:w-1/2 "> <figure><img className='w-full rounded' src={img} alt="..." /></figure>
                     <p>{description.slice(0, 100)} <span className='text-blue-700' title={description.slice(100,)}>...see more</span></p>
                     <div className='grid grid-cols-2'>
                         <h2 className="card-title">Payment: {servicePrice}</h2>
-                        <h2 className="card-title">Ratings: {rating} stars</h2>
+                        <h2 className="card-title">Ratings: 5{[1,2,3,4,5].map(st=><img src={star} alt="star" className='w-6 h-6'/>)} </h2>
                     </div>
                     <Link to='/myreviews'><button className="btn btn-outline btn-ghost">go review  &gt;</button></Link>
                 </div>
-                <div className="card-body mdw-1/2">
+                <div className="card-body md:w-1/2">
                     <div className='card-body mb-0 pb-0  bg-base-300 rounded'>
-                        <div className='grid grid-cols-2'>
-                            <input type="text" name="firstName" placeholder=" first name" className="input input-bordered w-full max-w-xs" required />
-                            <input type="text" name="lastName" placeholder="last name" className="input input-bordered w-full max-w-xs" required />
-                            <input type="number" name="phone" placeholder="your phone" className="input input-bordered w-full max-w-xs" required />
+                        <div className='grid grid-cols-2 gap-2'>
+                            <input type="text" name="firstName" placeholder=" first name" className="input input-bordered w-full" required />
+                            <input type="text" name="lastName" placeholder="last name" className="input input-bordered w-full" required />
+                            <input type="number" name="phone" placeholder="your phone" className="input input-bordered w-full" required />
                             <input type="email" name="email" defaultValue={user?.email} className="input input-bordered w-full" readOnly />
                         </div>
                         <textarea name="message" className="textarea textarea-bordered w-full" placeholder="service message" required></textarea>

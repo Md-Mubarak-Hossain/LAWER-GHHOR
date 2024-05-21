@@ -2,6 +2,7 @@ import React from 'react';
 import './Slider.css'
 import homeImg from "../../../images/GroupLawer2.png"
 import Typewriter from 'typewriter-effect';
+import { Link } from 'react-router-dom';
 const Slider = () => {
 
     return (
@@ -17,11 +18,13 @@ const Slider = () => {
                 <div class="w-full mx-auto py-5">
                 <p class='text-sm text-bold'>There are many services of Legal services of  available in our Lawyer service platform, Your quary,you can check the web</p></div>
                 <div class="w-full mx-auto p-5 md:flex flex-col justify-center items-center">
-                <Link class="mx-auto" to="/service"><button id="myAin" class="btn btn-outline rounded-3xl btn-sm px-5">Our Service</button></Link></div>`,
+                </div>`,
                                 autoStart: true,
                                 cursor: "",
                                 delay: 30
                             }} />
+            <Link id='myAin' to={`/services`} className='btn btn-sm rounded-full text-primary'>See our services
+                    </Link >
                     </div>
                 </div>
             </div>

@@ -3,6 +3,7 @@ import { AuthContext } from '../../../Contexts/Context';
 import useTitle from '../../../hooks/useTitle';
 import NoData from './NoData/NoData';
 import ReviewRow from './ReviewRow';
+import Load from '../../Shared/Load/Load';
 
 
 const MyReviews = () => {
@@ -10,7 +11,7 @@ const MyReviews = () => {
     const { user, loading } = useContext(AuthContext)
     const [myreview, setReviews] = useState([])
     useEffect(() => {
-        fetch(`https://lawyer-server-10.vercel.app/myreviews?email=${user.email}`, {
+        fetch(`https://lawyer-server-10.vercel.app/myreviews?email=${user?.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('myreviews-service-token')}`
             }
@@ -22,10 +23,11 @@ const MyReviews = () => {
                 setReviews(data)
 
             })
-            .catch(err => console.error(err))
+            .catch(err => {console.error(err)   
+            })
     }, [user?.email])
     if (loading) {
-        return <p>loading...</p>
+        return <Load/>
     }
 
 

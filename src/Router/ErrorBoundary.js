@@ -1,10 +1,6 @@
-import { useContext } from "react";
-import { AuthContext } from "../Contexts/Context";
-import Load from "../pages/Shared/Load/Load";
 import cloud from '../assets/svg/cloud.svg';
 const ErrorBoundary = () => {
-    const { loading } = useContext(AuthContext)
-    if (loading) { return <Load /> }
+  
     return (
         <div className="w-screen h-screen flex flex-col justify-center items-center bg-black">
             <div>
