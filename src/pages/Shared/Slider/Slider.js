@@ -1,5 +1,4 @@
 import React from 'react';
-
 import './Slider.css'
 import homeImg from "../../../images/GroupLawer2.png"
 import Typewriter from 'typewriter-effect';

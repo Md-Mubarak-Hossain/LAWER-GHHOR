@@ -77,9 +77,9 @@ const Header = () => {
                     </ul>
                 </div>
                 <div>
-                    <Link to='/' className="btn rounded-full flex justify-center items-center px-3 md:min-w-72">
+                    <Link to='/' className="btn rounded-full flex justify-center items-center px-3">
                         <img src={logo} alt='logo' className='w-10 h-10 pb-1' />
-                        <span className='md:text-xl text-warning md:font-bold pl-2'>Lawyer Service</span>
+                        <span className='md:text-lg text-warning md:font-bold pl-2'>Lawyer Service</span>
                     </Link>
                 </div>
             </div>
