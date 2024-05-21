@@ -1,0 +1,22 @@
+#myAin{
+    animation:myain 3s infinite ;
+}
+#myAin:hover{
+    animation:myain 0s infinite ;
+}
+@keyframes myain {
+    33% {transform: rotate(10deg);}
+    66% {transform: rotate(0deg);
+    color: blue;
+text-shadow: brown;}
+    99% {transform: rotate(-10deg);
+    color: brown;}
+}
+@keyframes myain {
+    33% {transform: rotate(10deg);}
+    66% {transform: rotate(0deg);
+    color: blue;
+text-shadow: brown;}
+    99% {transform: rotate(-10deg);
+    color: brown;}
+}

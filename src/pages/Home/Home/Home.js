@@ -7,7 +7,7 @@ import CivilLaws from '../../Services/CivilLaw/CivilLaws';
 import LegalNotices from '../../Services/LegalNotice/LegalNotices';
 import LegalService from '../../Services/LegalServices/LegalService';
 import Slider from '../../Shared/Slider/Slider';
-
+import './Home.css';
 
 
 const Home = () => {
@@ -22,7 +22,7 @@ const Home = () => {
             <div className='min-h-screen'>
             <Slider></Slider>
             </div>
-            <div className='my-6 flex flex-col  justify-center items-center w-full'>
+            <div className='py-6 flex flex-col  justify-center items-center w-full'>
                 <h2 className='text-2xl md:text-3xl font-extrabold text-center text-warning mdw-1/3 my-4'>Our Legal services</h2>
                 <p className='md:w-1/2 text-sm mb-4 text-center'>My service of lawyer  is most great full.The people of my country proud for me.I deliver this service by web based platform.</p>
                 <div className='grid grid-cols-1 md:grid-cols-3 flex-grow  rounded-box place-items-center w-10/12 mx-auto'>
@@ -31,8 +31,8 @@ const Home = () => {
                             ser={ser}></LegalService>)
                     }
                 </div >
-                <div className='my-6 py-5 w-full flex flex-col justify-center items-center '>
-                    <Link to={`/services`} className='text-primary link link-active active'>See more services
+                <div className='my-6 py-5 w-full flex flex-col justify-center items-center  skeleton'>
+                    <Link id='myAin' to={`/services`} className='btn btn-sm rounded-full text-primary'>See more services
                     </Link >
                 </div>
             </div >

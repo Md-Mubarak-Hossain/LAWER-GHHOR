@@ -17,7 +17,7 @@ const Slider = () => {
                 <div class="w-full mx-auto py-5">
                 <p class='text-sm text-bold'>There are many services of Legal services of  available in our Lawyer service platform, Your quary,you can check the web</p></div>
                 <div class="w-full mx-auto p-5 md:flex flex-col justify-center items-center">
-                <Link class="mx-auto" to="/service"><button class="btn btn-outline rounded-3xl btn-sm px-5">Our Service</button></Link></div>`,
+                <Link class="mx-auto" to="/service"><button id="myAin" class="btn btn-outline rounded-3xl btn-sm px-5">Our Service</button></Link></div>`,
                                 autoStart: true,
                                 cursor: "",
                                 delay: 30
